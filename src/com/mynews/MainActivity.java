@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.SslErrorHandler;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -20,9 +21,11 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		webView = (WebView) findViewById(R.id.webView);
-		webView.getSettings().setJavaScriptEnabled(true);
+		
+		WebSettings webSettings = webView.getSettings();
+		webSettings.setJavaScriptEnabled(true);
 
-		webView.loadUrl("http://hao123.com");
+		webView.loadUrl("http://192.168.40.128:8080/Test/index.jsp");
 
 		webView.setWebViewClient(new WebViewClient() {
 
